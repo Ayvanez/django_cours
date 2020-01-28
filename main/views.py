@@ -194,7 +194,7 @@ def main_view(request):
 
 def group_detail(request, group_id):
     group = get('Schedule.json', 'Schedule', group_id)
-
+    return redirect()
 
 def group_create(request):
     pass
