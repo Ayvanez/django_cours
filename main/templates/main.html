@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Schedule
+{% endblock %}
+
+{% block content %}
+    Сегодня: {{ day|date:'d-m-Y' }}
+    <br>
+    {{ groups.0.info.day }}
+    <br>
+    {{ day.isocalendar.1 }}
+    <hr>
+
+    {% for group in groups %}
+        {{ group.name.number }}
+        <table border="1">
+        {% for time in group.info.times %}
+            <tr>
+                <td>{{ time.time }}</td>
+                <td>{{ time.discipline.title }}</td>
+                <td>{{ time.discipline.type_of_work }}</td>
+                <td>{{ time.discipline.teacher.full_name }}</td>
+                <td>{{ time.weeks }}</td>
+            </tr>
+        {% endfor %}
+
+        </table>
+    {% endfor %}
+{% endblock %}

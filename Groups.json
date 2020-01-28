@@ -1,0 +1,14 @@
+{
+  "groups": [
+    { "id": 12,
+      "number": "K3121",
+      "ed_programm": 1,
+      "students":  [0, 1]
+    },
+     {  "id": 13,
+        "number": "K3122",
+        "ed_Programm": 2,
+        "students":  [2, 3]
+    }
+  ]
+}

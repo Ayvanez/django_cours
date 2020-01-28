@@ -1,0 +1,18 @@
+{
+  "ed_programmes": [
+    {
+      "id": 1,
+      "title": "Laser technology",
+      "description": "Graduates of the educational program are engaged in the development of the latest laser systems, as well as the creation of new materials for optoelectronics. The unique properties of laser radiation, allowing it to concentrate its energy in space, in time and in the spectral range, make it indispensable in many areas of human activity: industry, medicine, information technology. Laser and optoelectronic technologies are basic for information and communication systems, where they are used for recording, storage, transmission and processing of information. With the development of information technology, the need for various types of lasers is increasing significantly.",
+      "unique_code": "16.03.01",
+      "ed_discipline": [0, 1]
+    },
+    {
+      "id": 2,
+      "title": "Computer Science and Computer Engineering",
+      "description": "Computer Science and Computer Engineering is a classic IT speciality for technical managers and leading engineers in the high-tech industry. At the University, she is the ancestor of the entire computer and programming area. A feature of this program is the study in a complex architecture, device and modern technologies for the development of computing systems, computer networks and system software. The graduate specializes in systems engineer, systems architect",
+      "unique_code": "09.03.01",
+      "ed_discipline": [2, 3]
+    }
+  ]
+}

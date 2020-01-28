@@ -1,0 +1,27 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "full_name": "Алексеевна Светлана Владимировна",
+      "status": "Assistant"
+    },
+    {
+      "id": 2,
+      "full_name": [
+        "Гаврилова",
+        "Елена",
+        "Александровна"
+      ],
+      "status": "Associate Professor"
+    },
+    {
+      "id": 3,
+      "full_name": [
+        "Бабушкин",
+        "Евгений",
+        "Маркович"
+      ],
+      "status": "Associate Professor"
+    }
+  ]
+}

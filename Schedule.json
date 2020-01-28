@@ -1,0 +1,36 @@
+{
+  "Schedule": [
+    {
+      "id": 0,
+      "group": 12,
+      "days":
+              [
+                {
+                  "day": "понедельник",
+                  "times": [
+                    {
+                      "time": "9:00-10:30",
+                      "discipline": 3,
+                      "weeks": "odd"
+                    }
+                  ]
+                },
+                {
+                  "day": "вторник",
+                  "times": [
+                    {
+                      "time": "10:30-11:00",
+                      "discipline": 1,
+                      "weeks": "even"
+                    },
+                    {
+                      "time": "11:10 - 12:40",
+                      "discipline": 1,
+                      "weeks": "odd"
+                    }
+                  ]
+                }
+              ]
+    }
+  ]
+}

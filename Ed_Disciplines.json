@@ -1,0 +1,36 @@
+{
+  "ed_disciplines": [
+    {
+      "id": 0,
+      "title": "maths",
+      "term": "1",
+      "type_of_work": "Practical work",
+      "teacher": 1,
+      "ed_programme": 1
+    },
+    {
+      "id": 1,
+      "title": "physics",
+      "term": "2",
+      "type_of_work": "Labolatory work",
+      "teacher": 2,
+      "ed_programme": 1
+    },
+    {
+      "id": 2,
+      "title": "history",
+      "term": "3",
+      "type_of_work": "Lecture",
+      "teacher": 3,
+      "ed_programme": 2
+    },
+    {
+      "id": 3,
+      "title": "physics",
+      "term": "1",
+      "type_of_work": "Lecture",
+      "teacher": 2,
+      "ed_programme": 2
+    }
+  ]
+}

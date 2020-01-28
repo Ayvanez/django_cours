@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{% block title %} title {% endblock %}</title>
+</head>
+<body>
+<section>
+{% if request.session.person %}
+<p>{{ request.session.person.login}}</p>
+<a href="{% url 'logout' %}"> logout</a>
+{% else %}
+<a href="{% url 'login' %}">login</a>
+<a href="{% url 'register' %}"> register</a>
+{% endif %}
+<div>
+{% block content %}
+body
+{% endblock %}
+</div>
+</section>
+</body>
+</html>
