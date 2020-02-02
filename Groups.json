@@ -1,14 +1,1 @@
-{
-  "groups": [
-    { "id": 12,
-      "number": "K3121",
-      "ed_programm": 1,
-      "students":  [0, 1]
-    },
-     {  "id": 13,
-        "number": "K3122",
-        "ed_Programm": 2,
-        "students":  [2, 3]
-    }
-  ]
-}
+{"groups": [{"id": 12, "number": "K312123", "ed_programme": 1, "students": [0, 1]}, {"id": 13, "number": "K3122", "ed_programme": 2, "students": [2, 3]}, {"number": "frrE", "ed_programme": "1", "id": 53049343207575691412432131350578061245, "students": []}, {"number": "3ger", "ed_programme": 1, "id": 297343660414115217817297168866975681799, "students": []}]}

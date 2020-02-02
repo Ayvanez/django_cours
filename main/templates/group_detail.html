@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ schedule.group.name }}
+{% endblock %}
+
+{% block content %}
+    {% for day in schedule.days %}
+        {{ day.day }}
+    <table border="1">
+        {% for tm in day.times %}
+            <tr>
+                <td>
+                    {{ tm.time }}
+                </td>
+                <td>
+                    {{ tm.discipline.title }}
+                </td>
+                <td>
+                    {{ tm.weeks }}
+                </td>
+            <td>
+                {{ tm.discipline.type_of_work }}
+            </td>
+            <td>
+                {{ tm.discipline.teacher.full_name }}
+            </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+    {% endfor %}
+{% endblock %}
