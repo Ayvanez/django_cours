@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfa4cd78-975e-4eeb-a241-80a91e4becec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/discipline_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/discipline_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/group_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/group_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/group_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/programme_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/programme_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/student_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/student_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/teacher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/teacher_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/teacher_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Raspisanie_zanyatiy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Raspisanie_zanyatiy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/templates/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ed_Programm.json" beforeDir="false" afterPath="$PROJECT_DIR$/Ed_Programm.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groups.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groups.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teachers.json" beforeDir="false" afterPath="$PROJECT_DIR$/Teachers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.json" beforeDir="false" afterPath="$PROJECT_DIR$/Users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
@@ -43,11 +25,25 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="401" column="71" selection-start-line="401" selection-start-column="71" selection-end-line="401" selection-end-column="71" />
+                <state relative-caret-position="-4900">
+                  <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/main/templates/admin.html">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Users.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="100">
+                  <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -82,8 +78,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="400">
-                  <caret line="20" column="79" selection-start-line="20" selection-start-column="79" selection-end-line="20" selection-end-column="79" />
+                <state relative-caret-position="460">
+                  <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
                   </folding>
@@ -113,7 +109,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Groups.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state>
@@ -122,7 +118,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Ed_Programm.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="280">
@@ -157,6 +153,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>add_</find>
+      <find>admin</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -166,7 +168,6 @@
         <option value="$PROJECT_DIR$/main/tests.py" />
         <option value="$PROJECT_DIR$/main/templates/group_detail.html" />
         <option value="$PROJECT_DIR$/Groups.json" />
-        <option value="$PROJECT_DIR$/main/urls.py" />
         <option value="$PROJECT_DIR$/main/templates/group_create.html" />
         <option value="$PROJECT_DIR$/main/templates/logout.html" />
         <option value="$PROJECT_DIR$/main/templates/teacher_edit.html" />
@@ -180,6 +181,9 @@
         <option value="$PROJECT_DIR$/main/templates/teacher.html" />
         <option value="$PROJECT_DIR$/main/templates/teacher_create.html" />
         <option value="$PROJECT_DIR$/Ed_Programm.json" />
+        <option value="$PROJECT_DIR$/Users.json" />
+        <option value="$PROJECT_DIR$/main/urls.py" />
+        <option value="$PROJECT_DIR$/main/templates/admin.html" />
         <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
@@ -296,19 +300,19 @@
       <updated>1580207465539</updated>
       <workItem from="1580207473143" duration="2562000" />
       <workItem from="1580219773491" duration="9101000" />
-      <workItem from="1580598051541" duration="14477000" />
+      <workItem from="1580598051541" duration="21768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14477000" />
+    <option name="totallyTimeSpent" value="21768000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14872068" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -318,7 +322,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -456,16 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="79" selection-start-line="20" selection-start-column="79" selection-end-line="20" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Schedule.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -504,13 +498,6 @@
     <entry file="file://$PROJECT_DIR$/Students.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Groups.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="282" selection-start-column="282" selection-end-column="282" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ed_Disciplines.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -532,10 +519,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Groups.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="282" selection-start-column="282" selection-end-column="282" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="401" column="71" selection-start-line="401" selection-start-column="71" selection-end-line="401" selection-end-column="71" />
+        <state relative-caret-position="-4900">
+          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>

@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
 from django import forms
 from django.urls import reverse
-import time
 import json
-import os
 import datetime
 import uuid
 
@@ -33,11 +31,13 @@ class UserCreationForm(forms.Form):
             users = json.load(users_file)
 
         new_user = {
-            'id': int(time.time()),
+            'id': uuid.uuid4().int,
             'login': self.cleaned_data['login'],
             'password': self.cleaned_data['password1'],
             'full_name': self.cleaned_data['surname'] + ' ' + self.cleaned_data['name'] + ' ' + self.cleaned_data[
-                'patronymic']
+                'patronymic'],
+            'role': 'user',
+            'favourite': -1
         }
         with open('Users.json', 'w', encoding='utf8') as users_file:
             users['users'].append(new_user)
@@ -69,7 +69,10 @@ def login(request):
             person = find_person(form.cleaned_data['login'], form.cleaned_data['password'])
             if person:
                 auth(request, person)
-                return redirect(reverse('main_page'))
+                if person['favourite'] > 0:
+                    return redirect(reverse('group_detail', kwargs={'group_id': person['favourite']}))
+                else:
+                    return redirect(reverse('main'))
         return redirect(reverse('login'))
     form = UserLoginForm()
     return render(request, 'autorization.html', {"form": form})
@@ -83,6 +86,14 @@ def logout(request):
 
 def is_auth(request):
     return 'user' in request.session
+
+
+def has_moderator_permissions(request):
+    return request.session['user']['role'] in ('moderator', 'admin')
+
+
+def is_admin(request):
+    return request.session['user']['role'] == 'admin'
 
 
 def register(request):
@@ -112,7 +123,7 @@ def groups_view(request):
                 for student in students_list:
                     if group['students'][i] == student['id']:
                         group['students'][i] = student
-        print(groups_list)
+
         return render(request, 'group_list.html', {'group_list': groups_list})
 
 
@@ -225,6 +236,9 @@ class GroupForm(forms.Form):
 
 def group_create(request):
 
+    if not (is_auth(request) or has_moderator_permissions(request)):
+        return redirect(reverse('main'))
+
     if request.method == 'GET':
         form = GroupForm()
         return render(request, 'group_create.html', {'form': form})
@@ -242,6 +256,10 @@ def group_create(request):
 
 
 def group_edit(request, group_id):
+
+    if not (is_auth(request) or has_moderator_permissions(request)):
+        return redirect(reverse('main'))
+
     group = get('Groups.json', 'groups', group_id)
 
     if request.method == 'GET':
@@ -278,8 +296,37 @@ def teacher_schedule(request, teacher_id):
     return render(request, 'teacher.html', {'schedule': schd, 'teacher': teacher})
 
 
+def change_role(user_id, role):
+    user = get('Users.json', 'users', user_id)
+    user['role'] = role
+    edit('Users.json', 'users', user)
+
+
+def make_moderator(request, user_id):
+    if is_auth(request) and is_admin(request):
+        change_role(user_id, 'moderator')
+        return redirect(reverse('admin'))
+    return redirect(reverse('main'))
+
+
+def make_user(request, user_id):
+    if is_auth(request) and is_admin(request):
+        change_role(user_id, 'moderator')
+        return redirect(reverse('admin'))
+    return redirect(reverse('main'))
+
+
 def admin(request):
-    pass
+    with open('User.json', 'r', encoding='utf8') as user_json:
+        user_data = json.load(user_json)
+
+    users = []
+
+    for user in user_data['users']:
+        if user['role'] != 'admin':
+            users.append(user)
+
+    return render(request, 'admin.html', {'users': users})
 
 
 statuses = (
@@ -294,7 +341,24 @@ class TeacherForm(forms.Form):
     status = forms.ChoiceField(choices=statuses)
 
 
+def add_to_favourite(request, group_id):
+
+    if not is_auth(request):
+        return redirect(reverse('group_detail', kwargs={'group_id': group_id}))
+
+    user = get('Users.json', 'users', request.session['user']['id'])
+    user['favourite'] = group_id
+    request.session['user'] = user
+    edit('Users.json', 'users', user)
+
+    return redirect(reverse('group_detail', kwargs={'group_id': group_id}))
+
+
 def teacher_create(request):
+
+    if not (is_auth(request) or has_moderator_permissions(request)):
+        return redirect(reverse('main'))
+
     if request.method == 'GET':
         form = TeacherForm()
         return render(request, 'teacher_create.html', {'form': form})
@@ -325,6 +389,10 @@ class StudentForm(forms.Form):
 
 
 def student_create(request):
+
+    if not (is_auth(request) or has_moderator_permissions(request)):
+        return redirect(reverse('main'))
+
     if request.method == 'GET':
         form = StudentForm()
         return render(request, 'student_create.html', {'form': form})
@@ -345,6 +413,10 @@ def student_create(request):
 
 
 def teacher_edit(request, teacher_id):
+
+    if not (is_auth(request) or has_moderator_permissions(request)):
+        return redirect(reverse('main'))
+
     teacher = get('Teachers.json', 'teachers', teacher_id)
 
     if request.method == 'GET':
@@ -362,6 +434,10 @@ def teacher_edit(request, teacher_id):
 
 
 def student_edit(request, student_id):
+
+    if not (is_auth(request) or has_moderator_permissions(request)):
+        return redirect(reverse('main'))
+
     student = get('Student.json', 'students', student_id)
 
     if request.method == 'GET':
@@ -404,6 +480,9 @@ class DisciplineForm(forms.Form):
 
 
 def discipline_create(request):
+
+    if not (is_auth(request) or has_moderator_permissions(request)):
+        return redirect(reverse('main'))
     if request.method == 'GET':
         form = DisciplineForm()
         return render(request, 'discipline_create.html', {'form': form})
@@ -424,6 +503,10 @@ def discipline_create(request):
 
 
 def discipline_edit(request, discipline_id):
+
+    if not (is_auth(request) or has_moderator_permissions(request)):
+        return redirect(reverse('main'))
+
     discipline = get('Ed_Disciplines.json', 'ed_disciplines', discipline_id)
 
     if request.method == 'GET':
@@ -447,6 +530,10 @@ class ProgrammeForm(forms.Form):
 
 
 def programme_create(request):
+
+    if not (is_auth(request) or has_moderator_permissions(request)):
+        return redirect(reverse('main'))
+
     if request.method == 'GET':
         form = ProgrammeForm()
         return render(request, 'programme_create.html', {'form': form})
@@ -464,6 +551,10 @@ def programme_create(request):
 
 
 def programme_edit(request, programme_id):
+
+    if not (is_auth(request) or has_moderator_permissions(request)):
+        return redirect(reverse('main'))
+
     programme = get('Ed_Programm.json', 'students', programme_id)
 
     if request.method == 'GET':

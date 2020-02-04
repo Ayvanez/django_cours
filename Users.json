@@ -1,5 +1,8 @@
 {
   "users":[
-    {"id": 1579108992, "login": "Aivan", "password": "1111", "full_name": "Михайлов Иван Юрьевич"}
+    {"id": 1579108992, "login": "Aivan", "password": "1111", "full_name": "Михайлов Иван Юрьевич",
+      "favourite": 12,
+      "role": "admin"
+    }
   ]
 }

@@ -18,5 +18,8 @@ urlpatterns = [
  path('discipline/create', discipline_create, name='discipline_create'),
  path('discipline/edit/<int:discipline_id>', discipline_edit, name='discipline_edit'),
  path('programme/create', programme_create, name='programme_create'),
- path('programme/edit/<int:programme_id>', programme_edit, name='programme_edit')
+ path('programme/edit/<int:programme_id>', programme_edit, name='programme_edit'),
+ path('admin', admin, name='admin'),
+ path('make/moderator/<int:user_id>', make_moderator, name='make_moderator'),
+ path('make/user/<int:user_id>', make_user, name='make_user')
 ]
